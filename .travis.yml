@@ -1,5 +1,5 @@
 language: java
 jdk: openjdk11
 script:
-  - javac HelloWorld.java
-  - java HelloWorld
+  - javac src/Main.java
+  - java -cp src Main
