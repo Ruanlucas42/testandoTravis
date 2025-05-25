@@ -1,0 +1,5 @@
+language: java
+jdk: openjdk11
+script:
+  - javac HelloWorld.java
+  - java HelloWorld
