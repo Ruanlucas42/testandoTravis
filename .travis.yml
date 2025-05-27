@@ -1,5 +1,34 @@
+# Linguagem
 language: java
+
+# Versão JDK
 jdk: openjdk11
+
+# Preparação
+before_script:
+  - echo "Iniciando build"
+  - mkdir -p build
+
+# Build e execução
 script:
-  - javac src/Main.java
-  - java -cp src Main
+  - javac -d build src/Main.java
+  - java -cp build Main
+
+# Após sucesso
+after_success:
+  - echo "Build OK"
+
+# Após falha
+after_failure:
+  - echo "Build falhou"
+
+# Cache
+cache:
+  directories:
+    - build
+
+# Branches
+branches:
+  only:
+    - main
+    - develop
